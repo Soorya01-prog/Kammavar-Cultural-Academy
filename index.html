@@ -361,29 +361,19 @@
             space-y: 1.5rem;
         }
 
-        .about-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-color);
+        /* Simple About Items without container styling */
+        .about-item {
+            margin-bottom: 3rem;
         }
 
-        .about-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .about-card-header {
+        .about-item-header {
             display: flex;
             align-items: center;
             gap: 1rem;
             margin-bottom: 1rem;
         }
 
-        .about-card-icon {
+        .about-item-icon {
             width: 3rem;
             height: 3rem;
             background: var(--primary-blue);
@@ -395,15 +385,16 @@
             font-size: 1.5rem;
         }
 
-        .about-card h3 {
+        .about-item h3 {
             font-size: 1.25rem;
             font-weight: 700;
             color: var(--text-primary);
         }
 
-        .about-card p {
+        .about-item p {
             color: var(--text-muted);
             line-height: 1.6;
+            margin-left: 4rem;
         }
 
         .about-image {
@@ -1096,20 +1087,19 @@
             }
 
             /* Mobile Members Layout */
-            /* Mobile Members Layout */
-.members-container {
-    gap: 0;
-    padding: 0;
-    justify-content: flex-start;
-}
+            .members-container {
+                gap: 0;
+                padding: 0;
+                justify-content: flex-start;
+            }
 
-.member-card {
-    width: 100%;
-    flex: 0 0 100%;
-    max-width: none;
-    padding: 0 2rem;
-    box-sizing: border-box;
-}
+            .member-card {
+                width: 100%;
+                flex: 0 0 100%;
+                max-width: none;
+                padding: 0 2rem;
+                box-sizing: border-box;
+            }
 
             .member-photo {
                 width: 150px;
@@ -1123,15 +1113,21 @@
             .carousel-next {
                 right: 0;
             }
+
+            .about-item p {
+                margin-left: 0;
+            }
         }
 
         @media (max-width: 480px) {
             .container {
                 padding: 0 0.75rem;
             }
-.member-card {
-    padding: 0 1rem;
-}
+
+            .member-card {
+                padding: 0 1rem;
+            }
+            
             .nav-container {
                 padding: 0.75rem 0;
             }
@@ -1166,7 +1162,6 @@
                 padding: 2rem 0;
             }
 
-            .about-card,
             .contact-form,
             .contact-card {
                 padding: 1rem;
@@ -1293,9 +1288,9 @@
 
             <div class="about-grid">
                 <div class="about-content fade-in">
-                    <div class="about-card">
-                        <div class="about-card-header">
-                            <div class="about-card-icon">
+                    <div class="about-item">
+                        <div class="about-item-header">
+                            <div class="about-item-icon">
                                 <i class="fas fa-heart"></i>
                             </div>
                             <h3>Our Heritage</h3>
@@ -1305,22 +1300,20 @@
                         </p>
                     </div>
 
-                    <div class="about-card">
-                        <div class="about-card-header">
-                            <div class="about-card-icon">
+                    <div class="about-item">
+                        <div class="about-item-header">
+                            <div class="about-item-icon">
                                 <i class="fas fa-target"></i>
                             </div>
                             <h3>Our Mission</h3>
                         </div>
                         <p><strong>Kammavar Cultural Academy</strong> is a government-registered charitable trust dedicated to preserving the rich culture and traditions of the Kammavar Naidu community in Tamil Nadu. It also works for the legal protection and secure future of Kammavar children, promoting education and encouraging them to serve the nation with honesty in high positions of government.
-
-
                         </p>
                     </div>
 
-                    <div class="about-card">
-                        <div class="about-card-header">
-                            <div class="about-card-icon">
+                    <div class="about-item">
+                        <div class="about-item-header">
+                            <div class="about-item-icon">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
                             <h3>Our Values</h3>
@@ -1555,7 +1548,7 @@
                             </div>
                             <div class="contact-details">
                                 <h4>Email</h4>
-                                <a href="mailto:info@kammavarculturalacademy.org">info@kammavarculturalacademy.org</a>
+                                <a href="mailto:kcafoundation2024@gmail.com">kcafoundation2024@gmail.com</a>
                             </div>
                         </div>
                     </div>
@@ -1563,7 +1556,7 @@
 
                 <div class="fade-in fade-in-delay-1">
                     <form class="contact-form" onsubmit="submitForm(event)">
-                        <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">Membership Application</h3>
+                        <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">Membership and Services</h3>
                        
                         <div class="form-group">
                             <label for="name">Full Name *</label>
@@ -1587,7 +1580,7 @@
 
                         <div class="form-group">
                             <label for="message">Message *</label>
-                            <textarea id="message" name="message" required placeholder="Tell us about yourself and why you want to join"></textarea>
+                            <textarea id="message" name="message" required placeholder="Write here...."></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary" style="width: 100%;">
@@ -1634,9 +1627,9 @@
                         </a>
                     </div>
                     <div style="margin-bottom: 0.75rem;">
-                        <a href="mailto:info@kammavarculturalacademy.org" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <a href="mailto:kcafoundation2024@gmail.com style="display: flex; align-items: center; gap: 0.5rem;">
                             <i class="fas fa-envelope"></i>
-                            info@kammavarculturalacademy.org
+                            kcafoundation2024@gmail.com
                         </a>
                     </div>
                     <div>
@@ -1867,7 +1860,7 @@ Mobile: ${data.mobile}
 Message: ${data.message}
             `.trim();
            
-            const mailtoLink = `mailto:info@kammavarculturalacademy.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const mailtoLink = `mailto:kcafoundation2024@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             window.location.href = mailtoLink;
            
             alert('Thank you for your application! Your default email client will open to send the message.');
